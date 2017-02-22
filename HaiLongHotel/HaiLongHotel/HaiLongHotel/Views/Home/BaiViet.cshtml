@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "BaiViet";
+}
+
+<section class="baivietpg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+    <!--Bài viết-->
+    <article class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+
+        <!--Thông tin-->
+        <div class="thongtin col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!--Tiêu đề bài viết-->
+            <p class="tieude">Lạc trôi đến Cát Bà</p>
+
+            <!--Ngày đăng-->
+            <p class="thoigian">22/02/2017</p>
+        </div>
+
+        <!--Nội dung bài viết-->
+        <div class="noidung col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley
+            </p>
+            <img src="~/Content/images/dichvu/banner.png" alt="" class="img-responsive" />
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley
+            </p>
+        </div>
+    </article>
+
+    <!--Bài viết liên quan-->
+    <aside class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+
+        <!--Tiêu đề mục-->
+        <p class="tieude">Bài viết khác</p>
+
+        <!--Danh sách bài viết-->
+        <div class="cacbaiviet col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+            <!--Từng bài viết-->
+            @for (int i = 1; i <= 4; i++)
+            {
+            <a href="@Url.Action("BaiVie class=")" class="baiviet col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                <!--Ảnh bài viết-->
+                <img src="~/Content/images/dichvu/dichvu-2.png" alt="" class="img-responsive col-xs-12 col-sm-12 col-md-6 col-lg-6" />
+
+                <!--Thông tin-->
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <p class="tieude">Trôi lạc đến cát bà</p>
+                    <p class="tomtat">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+            </a>
+            }
+        </div>
+    </aside>
+</section>

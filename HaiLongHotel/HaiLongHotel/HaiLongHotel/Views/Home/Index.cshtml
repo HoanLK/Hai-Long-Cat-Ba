@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!--Trang chủ-->
+<section class="trangchu col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+    <!--Banner - Đặt phòng-->
+    <div class="banner-book hidden-xs col-sm-12 col-md-12 col-lg-12">
+
+        <!--Khám phá ngay-->
+        <div class="khampha col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p>
+                <span>Khách sạn Hải Long Cát Bà</span><br />
+                Cát bà là điểm đến - Hải Long là điểm dừng
+            </p>
+            <div class="button">
+                <button>Khám phá ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Chào mừng-->
+    <div class="chaomung col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p class="title">Chào mừng đến với Hải Long Cát Bà Hotel</p>
+        <p class="detail">
+            Khách sạn Hải Long là một trong những khách sạn thuộc chuỗi <span>khách sạn Cát Bà</span> được đánh giá cao
+            trong những năm vừa qua.Nằm ở vị trí trung tâm của khu du lịch đảo ngọc Cát Bà nhìn ra vịnh
+            Lan Hạ - một trong những Vịnh đẹp nhất của Việt Nam.
+        </p>
+    </div>
+
+    <!--Các loại phòng-->
+    <article class="loaiphong col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+        <!--Loại phòng-->
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <img src="~/Content/images/trangchu/phongtieuchuan.jpg" alt="" class="img-responsive" />
+            <p>Phòng tiêu chuẩn</p>
+            <a href="@Url.Action("BaiViet","Home")">Xem chi tiết</a>
+        </div>
+
+        <!--Loại phòng-->
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <img src="~/Content/images/trangchu/phongcaocap.jpg" alt="" class="img-responsive" />
+            <p>Phòng cao cấp</p>
+            <a href="@Url.Action("BaiViet","Home")">Xem chi tiết</a>
+        </div>
+
+        <!--Loại phòng-->
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <img src="~/Content/images/trangchu/phongvip.jpg" alt="" class="img-responsive" />
+            <p>Phòng vip</p>
+            <a href="@Url.Action("BaiViet","Home")">Xem chi tiết</a>
+        </div>
+    </article>
+
+    <!--Bài viết-->
+    <article class="baiviet col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <!--Nền-->
+        <img src="~/Content/images/trangchu/baiviet-bg.png" alt="" class="img-responsive hidden-xs hidden-sm" />
+
+        <!--Các bài viết-->
+        <div class="news col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+            <!--Bài viết-->
+            <a href="@Url.Action("BaiViet","Home")" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <p class="title">Đặc sản cá thu một nắng</p>
+                <img src="~/Content/images/trangchu/baiviet-1.jpg" alt="" class="img-responsive" />
+                <p class="detail">Cá thu một nắng là một trong các món ngon đặc sắc của ẩm thực Cát Bà.Nguyên liệu là cá thu phấn, một loại cá biển tươi ngon..</p>
+            </a>
+
+            <!--Bài viết-->
+            <a href="@Url.Action("BaiViet","Home")" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <p class="title">DU LỊCH CAO ĐIỂM 177 CÁT BÀ</p>
+                <img src="~/Content/images/trangchu/baiviet-2.jpg" alt="" class="img-responsive" />
+                <p class="detail">Cát Bà – Hải Phòng được xem là hòn đảo ngọc của Việt Nam. Cát Bà là nơi hòa quyện giữa rừng và biển tạo nên một phong cảnh có một......</p>
+            </a>
+
+            <!--Bài viết-->
+            <a href="@Url.Action("BaiViet","Home")" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <p class="title">MÓN NGON CÁT Bà</p>
+                <img src="~/Content/images/trangchu/baiviet-3.jpg" alt="" class="img-responsive" />
+                <p class="detail">Du lịch Cát Bà, du khách sẽ được thưởng ngoạn những cảnh quan thiên nhiên, hít thở không khí trong lành và còn được thưởng thức......</p>
+            </a>
+
+            <!--Bài viết-->
+            <a href="#" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <p class="title">CÁT BÀ - ĐIỂM ĐẾN TUYỆT VỜI</p>
+                <img src="~/Content/images/trangchu/baiviet-4.jpg" alt="" class="img-responsive" />
+                <p class="detail">Quần đảo Cát Bà nằm ở phía nam của Vịnh Hạ Long – Quần đảo Cát Bà tập trung rất nhiều giá trị về cảnh quan, sinh thái, địa chất......</p>
+            </a>
+        </div>
+    </article>
+
+</section>

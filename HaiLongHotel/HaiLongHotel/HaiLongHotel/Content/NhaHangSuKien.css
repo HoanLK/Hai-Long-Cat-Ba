@@ -1,0 +1,222 @@
+/*Trang sự kiện*/
+.nhahangsukien {
+    height: 1%;
+    overflow: hidden;
+    padding: 2.5em 1em;
+}
+
+    /*Tiêu đề trang*/
+    .nhahangsukien > .tieude {
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        font-size: 3em;
+        margin: 0 0 1.5em 0;
+    }
+
+        .nhahangsukien > .tieude:after {
+            content: "";
+            background: url(../Content/images/trangchu/chaomung-border.png) no-repeat;
+            background-size: 100%;
+            position: absolute;
+            width: 10%;
+            height: 1.5em;
+            left: 45%;
+            top: 2.2em;
+        }
+
+    /*Trang chính*/
+    .nhahangsukien > article {
+        margin: 0;
+    }
+
+        /*Từng tin*/
+        .nhahangsukien > article > .tintuc {
+            padding: 2em 0;
+        }
+
+            /*Ảnh bài viết*/
+            .nhahangsukien > article > .tintuc > a {
+                padding: 0;
+            }
+
+                .nhahangsukien > article > .tintuc > a > img {
+                    padding: 0;
+                    width: 100%;
+                    height: 50vh;
+                    border-radius: 1.5em;
+                }
+
+            /*Thông tin bài viết*/
+            .nhahangsukien > article > .tintuc > .thongtin {
+            }
+
+                /*Tiêu đề bài viết*/
+                .nhahangsukien > article > .tintuc > .thongtin > .tieude {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 2em;
+                    color: rgb(0, 0, 0);
+                    padding: 0 0.5em;
+                }
+
+                /*Tóm tắt bài viết*/
+                .nhahangsukien > article > .tintuc > .thongtin > .tomtat {
+                    text-align: justify;
+                    font-size: 1.2em;
+                    letter-spacing: 1px;
+                    margin: 0 0 5em 0;
+                }
+
+                /*Nút xem thêm*/
+                .nhahangsukien > article > .tintuc > .thongtin > .xemthem {
+                }
+
+                    .nhahangsukien > article > .tintuc > .thongtin > .xemthem > a {
+                        float: right;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: rgb(75, 193, 240);
+                        font-size: 1.2em;
+                        border: 1px solid rgb(75, 193, 240);
+                        border-radius: 0.5em;
+                        padding: 0.5em 1em;
+                        transition: all .2s ease-in-out;
+                    }
+
+                        .nhahangsukien > article > .tintuc > .thongtin > .xemthem > a:hover {
+                            color: rgb(255, 255, 255);
+                            background: rgb(75, 193, 240);
+                        }
+
+/*Số trang*/
+.container {
+    width: 100%;
+    height: 1%;
+    overflow: hidden;
+}
+
+    .container .pagination {
+        text-align: center;
+        margin: 0 auto;
+        width: 20%;
+        margin: 2em 40%;
+    }
+
+        .container .pagination li a {
+            width: 20%;
+        }
+
+/*Giao diện cho màn hình lớn*/
+@media (min-width: 1400px) {
+}
+
+/*Giao diện cho tablet (ngang)*/
+@media (min-width: 992px) and (max-width: 1024px) {
+}
+
+/*Giao diện cho tablet (dọc)*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /*Trang sự kiện*/
+    .nhahangsukien {
+        padding: 3em 1em 0em 1em;
+    }
+
+        .nhahangsukien > .tieude:after {
+            width: 20%;
+            left: 40%;
+            top: 2.5em;
+        }
+
+        /*Trang chính*/
+        .nhahangsukien > article {
+            margin: 1em 0 0 0;
+        }
+
+            /*Từng tin*/
+            .nhahangsukien > article > .tintuc > a > img {
+                height: 40vh;
+            }
+
+            /*Thông tin bài viết*/
+            .nhahangsukien > article > .tintuc > .thongtin {
+                padding: 1em 0;
+            }
+
+                /*Tiêu đề bài viết*/
+                .nhahangsukien > article > .tintuc > .thongtin > .tieude {
+                    font-size: 3em;
+                    padding: 0 0.5em;
+                }
+
+                /*Tóm tắt bài viết*/
+                .nhahangsukien > article > .tintuc > .thongtin > .tomtat {
+                    font-size: 1.5em;
+                }
+
+                .nhahangsukien > article > .tintuc > .thongtin > .xemthem > a {
+                    font-size: 1.5em;
+                    color: rgb(255, 255, 255);
+                    background: rgb(75, 193, 240);
+                }
+
+
+    /*Số trang*/
+    .container .pagination {
+        width: 30%;
+        margin: 2em 35%;
+    }
+}
+
+/*Giao diện cho điện thoại*/
+@media (max-width: 767px) {
+    /*Tiêu đề trang*/
+    .nhahangsukien > .tieude {
+        font-size: 2em;
+    }
+
+        .nhahangsukien > .tieude:after {
+            width: 25%;
+            left: 37.5%;
+            top: 2.8em;
+        }
+
+    /*Trang chính*/
+    .nhahangsukien > article > .tintuc > a > img {
+        height: 30vh;
+    }
+
+    /*Thông tin bài viết*/
+    .nhahangsukien > article > .tintuc > .thongtin {
+        margin: 1em 0 0 0;
+    }
+
+        /*Tiêu đề bài viết*/
+        .nhahangsukien > article > .tintuc > .thongtin > .tieude {
+            font-size: 2em;
+            padding: 0;
+        }
+
+        /*Tóm tắt bài viết*/
+        .nhahangsukien > article > .tintuc > .thongtin > .tomtat {
+            margin: 1em 0 2em 0;
+            padding: 0;
+        }
+
+        /*Nút xem thêm*/
+        .nhahangsukien > article > .tintuc > .thongtin > .xemthem {
+            padding: 0;
+        }
+
+            .nhahangsukien > article > .tintuc > .thongtin > .xemthem > a {
+                color: rgb(255, 255, 255);
+                background: rgb(75, 193, 240);
+            }
+
+    /*Số trang*/
+    .container .pagination {
+        width: 60%;
+        margin: 2em 20%;
+    }
+}

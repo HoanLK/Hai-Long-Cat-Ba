@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "DichVu";
+}
+
+<section class="dichvu col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+    <!--Banner-->
+    <div class="banner hidden-xs col-sm-12 col-md-12 col-lg-12">
+        <img src="~/Content/images/dichvu/banner.png" alt="" />
+        <div class="opacity"></div>
+
+        <!--Text-->
+        <p>Dịch vụ khách sạn</p>
+    </div>
+
+    <!--Dịch vụ-->
+    <div class="cacdiadiem col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <!--Địa điểm-->
+        @for (int i = 1; i <= 7; i++)
+            {
+                if (i <= 2 || i > 5)
+                {
+                <div class="view view-sixth dd-1 col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <img src="~/Content/images/dichvu/dichvu-1.png" />
+                    <div class="mask">
+                        <h3>Đi lặn</h3>
+                        <p>Cát bà đẹp tuyệt vời. Cát bà đẹp tuyệt vời. Cát bà đẹp tuyệt vời. Cát bà đẹp tuyệt vời. Cát bà đẹp tuyệt vời.</p>
+                        <a href="@Url.Action("BaiViet","Home")" class="info">Đọc tiếp</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="view view-sixth dd-1 col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <img src="~/Content/images/dichvu/dichvu-7.png" />
+                    <div class="mask">
+                        <h3>Leo núi</h3>
+                        <p>Cát bà đẹp tuyệt vời. Cát bà đẹp tuyệt vời. Cát bà đẹp tuyệt vời. Cát bà đẹp tuyệt vời. Cát bà đẹp tuyệt vời.</p>
+                        <a href="@Url.Action("BaiViet","Home")" class="info">Đọc tiếp</a>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</section>

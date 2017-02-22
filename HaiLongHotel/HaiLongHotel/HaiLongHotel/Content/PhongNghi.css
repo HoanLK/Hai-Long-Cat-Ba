@@ -1,0 +1,205 @@
+﻿/*Phòng nghỉ*/
+.phongnghi {
+    padding: 0;
+}
+
+    /*Banner*/
+    .phongnghi > .banner {
+        padding: 0;
+    }
+
+        /*Ảnh banner*/
+        .phongnghi > .banner > img {
+            width: 100%;
+            height: 70vh;
+        }
+
+        /*Chữ trên banner*/
+        .phongnghi > .banner > .text {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 70vh;
+            text-align: center;
+            padding: 20vh 0 0 0;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: "Times New Roman";
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+            .phongnghi > .banner > .text > .line-1 {
+                color: rgb(58, 196, 250);
+                font-size: 4em;
+                margin: 0 0 1em 0;
+            }
+
+            .phongnghi > .banner > .text > .line-2 {
+                color: rgb(247, 196, 17);
+                font-size: 1.5em;
+            }
+
+    /*Các loại phòng*/
+    .phongnghi > .cacloaiphong {
+        padding: 0 5em;
+    }
+
+        /*Loại phòng*/
+        .phongnghi > .cacloaiphong > .loaiphong {
+            height: 1%;
+            overflow: hidden;
+            margin: 5em 0;
+            padding: 1em 0 0 0;
+            border: 1px solid rgba(0,0,0,.05);
+            box-shadow: 2px 2px 5px rgba(0,0,0,.5);
+            background: rgb(255,255,255);
+        }
+
+            /*Tên loại phòng*/
+            .phongnghi > .cacloaiphong > .loaiphong > p {
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-family: "Times New Roman";
+                font-size: 2em;
+                margin: 0 0 2em 0;
+            }
+
+                .phongnghi > .cacloaiphong > .loaiphong > p::after {
+                    content: "";
+                    background: url(../Content/images/trangchu/chaomung-border.png) no-repeat;
+                    position: absolute;
+                    width: 10%;
+                    height: 1.5em;
+                    left: 45%;
+                    top: 1.5em;
+                }
+
+            /*Thông tin loại phòng*/
+            .phongnghi > .cacloaiphong > .loaiphong > div {
+                height: 1%;
+                overflow: hidden;
+                padding: 1em;
+            }
+
+                /*Ảnh loại phòng*/
+                .phongnghi > .cacloaiphong > .loaiphong > div > img {
+                    height: 25em;
+                    padding: 0;
+                }
+
+                /*Chi tiết thông tin phòng*/
+                .phongnghi > .cacloaiphong > .loaiphong > div > .chitiet {
+                    padding: 1em 0;
+                }
+
+                    .phongnghi > .cacloaiphong > .loaiphong > div > .chitiet > ul {
+                        list-style: none;
+                        padding: 0;
+                    }
+
+                        .phongnghi > .cacloaiphong > .loaiphong > div > .chitiet > ul > li {
+                            font-size: 1em;
+                            letter-spacing: 1px;
+                            line-height: 1.7em;
+                            padding: 0 0 0 2em;
+                        }
+
+                        .phongnghi > .cacloaiphong > .loaiphong > div > .chitiet > ul > .title {
+                            font-weight: bold;
+                            font-size: 1.2em;
+                            color: rgb(58, 196, 250);
+                            padding: 0 0 0 1em;
+                        }
+
+                    .phongnghi > .cacloaiphong > .loaiphong > div > .chitiet > .xemthem {
+                        float: right;
+                        font-size: 1.2em;
+                        margin: 0 2em 0 0;
+                        transition: all .3s ease-in-out;
+                        text-decoration: none;
+                    }
+
+                        .phongnghi > .cacloaiphong > .loaiphong > div > .chitiet > .xemthem:hover {
+                            margin: 0 1.5em 0 0;
+                        }
+
+                        .phongnghi > .cacloaiphong > .loaiphong > div > .chitiet > .xemthem > i {
+                            transition: all .3s ease-in-out;
+                        }
+
+                        .phongnghi > .cacloaiphong > .loaiphong > div > .chitiet > .xemthem:hover > i {
+                            padding: 0 0 0 0.5em;
+                        }
+
+/*Giao diện cho màn hình lớn*/
+@media (min-width: 1400px) {
+}
+
+/*Giao diện cho tablet (ngang)*/
+@media (min-width: 992px) and (max-width: 1024px) {
+}
+
+/*Giao diện cho tablet (dọc)*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /*Banner*/
+    .phongnghi > .banner {
+        height: 1%;
+        overflow: hidden;
+        padding: 1em 0;
+    }
+
+        /*Ảnh banner*/
+        .phongnghi > .banner > img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /*Chữ trên banner*/
+        .phongnghi > .banner > .text {
+            height: 1%;
+            padding: 10vh 0 0 0;
+        }
+
+            .phongnghi > .banner > .text > .line-1 {
+                font-size: 3.5em;
+                margin: 0 0 0.5em 0;
+            }
+
+            .phongnghi > .banner > .text > .line-2 {
+                font-size: 1.3em;
+            }
+
+    /*Các loại phòng*/
+    .phongnghi > .cacloaiphong {
+        padding: 0 1em;
+    }
+}
+
+/*Giao diện cho điện thoại*/
+@media (max-width: 767px) {
+    /*Các loại phòng*/
+    .phongnghi > .cacloaiphong {
+        padding: 0 1em;
+    }
+
+        /*Loại phòng*/
+        .phongnghi > .cacloaiphong > .loaiphong {
+            border: 1px solid rgba(0,0,0,.3);
+            padding: 1em 0 2em 0;
+        }
+
+            .phongnghi > .cacloaiphong > .loaiphong > p::after {
+                width: 30%;
+                left: 35%;
+            }
+
+            /*Chi tiết thông tin phòng*/
+            .phongnghi > .cacloaiphong > .loaiphong > div > .chitiet {
+                padding: 1em 0;
+            }
+
+                .phongnghi > .cacloaiphong > .loaiphong > div > .chitiet > ul {
+                    padding: 0 1em 0 0;
+                }
+}

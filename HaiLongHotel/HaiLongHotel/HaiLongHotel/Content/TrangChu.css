@@ -1,0 +1,368 @@
+﻿/*Trang chủ*/
+.trangchu {
+    padding: 0;
+}
+
+    /*Banner -Đặt phòng*/
+    .trangchu > .banner-book {
+        background: url(../Content/images/trangchu/banner-bg.png) no-repeat;
+        background-size: 100%;
+        padding: 0;
+        margin: 0;
+        height: 70vh;
+    }
+
+        /*Khám phá ngay*/
+        .trangchu > .banner-book > .khampha {
+        }
+
+            /*Nội dung*/
+            .trangchu > .banner-book > .khampha > p {
+                font-family: Time new roma;
+                font-size: 1.7em;
+                text-transform: uppercase;
+                text-align: center;
+                width: 60%;
+                padding: 2.5em 0 1em 0;
+            }
+
+                .trangchu > .banner-book > .khampha > p > span {
+                    font-size: 1.8em;
+                    font-weight: bold;
+                }
+
+            /*Nút ấn*/
+            .trangchu > .banner-book > .khampha > .button {
+                width: 60%;
+                text-align: center;
+            }
+
+                .trangchu > .banner-book > .khampha > .button > button {
+                    background: rgb(247, 196, 17);
+                    border: none;
+                    padding: 1em 2em;
+                    font-family: Time new roman;
+                    font-size: 1.2em;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+
+    /*Chào mừng*/
+    .trangchu > .chaomung {
+        text-align: center;
+        padding: 0 0 10em 0;
+    }
+
+        .trangchu > .chaomung > .title {
+            font-family: Time new roman;
+            font-size: 2.2em;
+            text-transform: uppercase;
+            padding: 2em 0 2em 0;
+        }
+
+            .trangchu > .chaomung > .title:after {
+                content: "";
+                background: url(../Content/images/trangchu/chaomung-border.png) no-repeat;
+                background-size: 100%;
+                width: 4em;
+                height: 2em;
+                position: absolute;
+                margin: 2em 0 0 -13.5em;
+            }
+
+        .trangchu > .chaomung > .detail {
+            width: 60%;
+            margin-left: 20%;
+            font-size: 1.2em;
+        }
+
+            .trangchu > .chaomung > .detail > span {
+                color: rgb(52, 152, 219);
+                font-style: italic;
+            }
+
+    /*Các loại phòng*/
+    .trangchu > .loaiphong {
+        z-index: 20;
+        margin: -5em 0 -13em 0;
+        width: 80%;
+        left: 10%;
+    }
+
+        /*Từng loại phòng*/
+        .trangchu > .loaiphong > div {
+            background: rgb(255, 255, 255);
+            width: 30%;
+            margin: 0 1em;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            text-align: center;
+        }
+
+            .trangchu > .loaiphong > div:hover {
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            }
+
+            /*Ảnh minh họa*/
+            .trangchu > .loaiphong > div > img {
+                width: 96%;
+                margin-left: 2%;
+                height: 15em;
+            }
+
+            /*Thông tin*/
+            .trangchu > .loaiphong > div > p {
+                font-size: 1.5em;
+                text-transform: uppercase;
+                text-align: center;
+                padding: 0.5em 0 0 0;
+            }
+
+            /*Nút đặt phòng*/
+            .trangchu > .loaiphong > div > a {
+                display: block;
+                width: 45%;
+                text-align: center;
+                text-transform: uppercase;
+                border: solid 2px rgb(52, 152, 219);
+                padding: 0.5em;
+                margin: 2em auto;
+                text-decoration: none;
+                transition: all 0.1s ease-in-out;
+            }
+
+                .trangchu > .loaiphong > div > a:hover {
+                    font-weight: bold;
+                    width: 45%;
+                    margin: 2em auto;
+                }
+
+    /*Mục bài viết*/
+    .trangchu > .baiviet {
+        padding: 0 0 5em 0;
+    }
+
+        /*Ảnh nền*/
+        .trangchu > .baiviet > img {
+        }
+
+        /*Khung bài viết*/
+        .trangchu > .baiviet > .news {
+            z-index: 20;
+            margin-top: -32em;
+            background: rgb(255, 255, 255);
+            padding: 1em;
+        }
+
+            /*Từng bài viết*/
+            .trangchu > .baiviet > .news > a {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                color: rgb(100, 100, 100);
+            }
+
+                /*Tiêu đề*/
+                .trangchu > .baiviet > .news > a > .title {
+                    font-size: 1.1em;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    padding: 0.5em 0;
+                    transition: all .3s ease-in-out;
+                }
+
+                .trangchu > .baiviet > .news > a:hover > .title {
+                    color: rgb(75, 193, 240);
+                }
+
+                /*Ảnh minh họa*/
+                .trangchu > .baiviet > .news > a > img {
+                    width: 15em;
+                    height: 12em;
+                    margin: 0 auto;
+                }
+
+                /*Chi tiết*/
+                .trangchu > .baiviet > .news > a > .detail {
+                    text-align: left;
+                    padding: 1em;
+                }
+
+/*Giao diện cho màn hình lớn*/
+@media (min-width: 1400px) {
+}
+
+/*Giao diện cho tablet (ngang)*/
+@media (min-width: 992px) and (max-width: 1024px) {
+}
+
+/*Giao diện cho tablet (dọc)*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /*Banner -Đặt phòng*/
+    .trangchu > .banner-book {
+        height: 1%;
+        overflow: hidden;
+        padding: 0 0 10em 0;
+    }
+
+        /*Nội dung*/
+        .trangchu > .banner-book > .khampha > p {
+            font-size: 1.5em;
+            width: 80%;
+        }
+
+            .trangchu > .banner-book > .khampha > p > span {
+                font-size: 1.8em;
+            }
+
+        /*Nút ấn*/
+        .trangchu > .banner-book > .khampha > .button {
+            width: 80%;
+        }
+
+    /*Chào mừng*/
+    .trangchu > .chaomung {
+        padding: 0 0 5em 0;
+    }
+
+        .trangchu > .chaomung > .detail {
+            width: 70%;
+            margin-left: 15%;
+        }
+
+    /*Các loại phòng*/
+    .trangchu > .loaiphong {
+        margin: 0;
+        width: 100%;
+        left: auto;
+        height: 1%;
+        overflow: hidden;
+        padding: 0 1em 2em 1em;
+    }
+
+        /*Từng loại phòng*/
+        .trangchu > .loaiphong > div {
+            width: 30%;
+            text-align: center;
+            padding: 0 1em 1em 1em;
+            float: left !important;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            margin: 0 1.6%;
+        }
+
+            /*Thông tin*/
+            .trangchu > .loaiphong > div > p {
+                font-size: 1.2em;
+            }
+
+            /*Nút đặt phòng*/
+            .trangchu > .loaiphong > div > a {
+                width: 70%;
+            }
+
+                .trangchu > .loaiphong > div > a:hover {
+                    width: 70%;
+                }
+
+    /*Mục bài viết*/
+    .trangchu > .baiviet {
+        padding: 3em 0;
+        ;
+        height: 1%;
+        overflow: hidden;
+    }
+
+        /*Khung bài viết*/
+        .trangchu > .baiviet > .news {
+            margin-top: 0;
+            background-color: transparent;
+        }
+
+            /*Từng bài viết*/
+            .trangchu > .baiviet > .news > a {
+                height: 1%;
+                overflow: hidden;
+                margin: 0 0 4em 0;
+                ;
+            }
+
+                /*Tiêu đề*/
+                .trangchu > .baiviet > .news > a > .title {
+                    text-align: justify;
+                }
+
+                /*Ảnh minh họa*/
+                .trangchu > .baiviet > .news > a > img {
+                    margin: 0;
+                    float: left;
+                    width: 30%;
+                }
+
+                /*Chi tiết*/
+                .trangchu > .baiviet > .news > a > .detail {
+                    text-align: justify;
+                    padding: 1em;
+                    margin: 0;
+                    float: left;
+                    width: 70%;
+                }
+}
+
+/*Giao diện cho điện thoại*/
+@media (max-width: 767px) {
+    /*Chào mừng*/
+    .trangchu > .chaomung {
+        text-align: center;
+        padding: 0 0 5em 0;
+    }
+
+        .trangchu > .chaomung > .title {
+            font-size: 1.8em;
+        }
+
+            .trangchu > .chaomung > .title:after {
+                width: 30%;
+                margin: 2em 0 0 -35%;
+            }
+
+        .trangchu > .chaomung > .detail {
+            width: 100%;
+            margin-left: 0;
+            font-size: 1.1em;
+            padding: 0 1em;
+        }
+
+    /*Các loại phòng*/
+    .trangchu > .loaiphong {
+        width: 100%;
+        left: 0;
+        height: 1%;
+        overflow: hidden;
+        margin: 0 0 2em 0;
+    }
+
+        /*Từng loại phòng*/
+        .trangchu > .loaiphong > div {
+            width: 100%;
+            margin: 0 0 2em 0;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            padding: 0 1em 1em 1em;
+        }
+
+    /*Mục bài viết*/
+    .trangchu > .baiviet {
+        padding: 0;
+        height: 1%;
+        overflow: hidden;
+    }
+
+        /*Khung bài viết*/
+        .trangchu > .baiviet > .news {
+            margin-top: 0;
+        }
+
+            /*Từng bài viết*/
+            .trangchu > .baiviet > .news > a {
+                margin: 0 0 3em 0;
+            }
+}

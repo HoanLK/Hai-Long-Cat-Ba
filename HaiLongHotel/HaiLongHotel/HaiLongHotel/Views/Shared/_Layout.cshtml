@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Khách sạn Hải Long</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="~/Content/_Layout.css" rel="stylesheet" />
+    <link href="~/Content/Menu-Mobile.css" rel="stylesheet" />
+    <link href="~/Content/TrangChu.css" rel="stylesheet" />
+    <link href="~/Content/PhongNghi.css" rel="stylesheet" />
+    <link href="~/Content/DichVu.css" rel="stylesheet" />
+    <link href="~/Content/NhaHangSuKien.css" rel="stylesheet" />
+    <link href="~/Content/BaiViet.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Front/modernizr.custom.js"></script>
+
+    <style>
+        .fixed {
+            position: fixed;
+            top: 0;
+            z-index: 2000;
+        }
+
+        .shadow {
+            box-shadow: 0px 2px 5px rgba(0,0,0,.5);
+        }
+    </style>
+
+</head>
+<body class="row">
+
+    <header>
+        <!--Menu cho desktop-->
+        <div class="desktop hidden-xs hidden-sm col-md-12 col-lg-12">
+
+            <!--Logo công ty-->
+            <div class="logo col-md-2 col-lg-2">
+                <a href="@Url.Action("Index","Home")">
+                    <img src="~/Content/images/logo-co.png" alt="" class="img-responsive" />
+                </a>
+            </div>
+
+            <!--Nút chuyển ngôn ngữ và menu-->
+            <div class="menu-lang col-md-10 col-lg-10">
+
+                <!--Nút chuyển ngôn ngữ-->
+                <div class="lang col-md-12 col-lg-12">
+                    <a href="#" class="pull-right">
+                        <img src="~/Content/images/EN-ico.png" alt="" class="img-responsive" />
+                    </a>
+                    <a href="#" class="pull-right">
+                        <img src="~/Content/images/VN-ico.png" alt="" class="img-responsive" />
+                    </a>
+                </div>
+
+                <!--Menu-->
+                <nav class="menu col-md-12 col-lg-12">
+                    <ul>
+                        <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                        <li><a href="@Url.Action("PhongNghi","Home")">Phòng nghỉ</a></li>
+                        <li><a href="@Url.Action("NhaHangSuKien","Home")">Nhà hàng & sự kiên</a></li>
+                        <li><a href="@Url.Action("DichVu","Home")">Dịch vụ khách sạn</a></li>
+                        <li><a href="@Url.Action("TuyenDung","Home")">Tuyển dụng</a></li>
+                        <li><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
+                        <li class="phone"><a href="tel:0313888635"><i class="fa fa-phone"></i>0313 888 635</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!--Giao diện cho di động-->
+        <div class="mobile col-xs-12 col-sm-12 hidden-md hidden-lg">
+            <nav id="dl-menu" class="dl-menuwrapper">
+                <button class="dl-trigger">Open Menu</button>
+                <div>
+                    <a href="@Url.Action("Index","Home")" class="logo"><img src="~/Content/images/logo-co.png" alt="" /></a>
+                    <a id="button-search" class="search"><i class="fa fa-search search-btn"></i></a>
+                </div>
+                <ul class="dl-menu">
+                    <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                    <li><a href="@Url.Action("PhongNghi","Home")">Phòng nghỉ</a></li>
+                    <li><a href="@Url.Action("NhaHang&SuKien","Home")">Nhà hàng & sự kiên</a></li>
+                    <li><a href="@Url.Action("DichVu","Home")">Dịch vụ khách sạn</a></li>
+                    <li><a href="@Url.Action("TuyenDung","Home")">Tuyển dụng</a></li>
+                    <li><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
+                </ul>
+                <input type="text" placeholder="Nhập tìm kiếm ..." value="" id="search-box" class="search-box" />
+            </nav>
+        </div>
+
+        <!--Đặt phòng-->
+        <div class="book col-xs-12 col-xs-12 col-md-12 col-lg-12">
+
+            <!--Tiêu đè-->
+            <p class="col-xs-12 col-sm-12 col-md-2 col-lg-2">Đặt phòng</p>
+
+            <!--Thông tin đặt phòng-->
+            <form class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <div class="chonngay pull-left">
+                    <label>Ngày đến</label><br />
+                    <input type="text" class="date" id="datepicker1" />
+                </div>
+                <div class="chonngay pull-left">
+                    <label>Ngày đi</label><br />
+                    <input type="text" class="date" id="datepicker2" />
+                </div>
+                <div class="select pull-left">
+                    <label for="soluongphong">Số lượng phòng</label><br />
+                    <select id="soluongphong">
+                        <option selected>0 phòng</option>
+                        <option>1 phòng</option>
+                        <option>2 phòng</option>
+                        <option>3 phòng</option>
+                    </select>
+                </div>
+                <div class="select pull-left">
+                    <label for="nguoilon">Người lớn</label><br />
+                    <select id="nguoilon">
+                        <option selected>0 người lớn</option>
+                        <option>1 người lớn</option>
+                        <option>2 người lớn</option>
+                        <option>3 người lớn</option>
+                    </select>
+                </div>
+                <div class="select pull-left">
+                    <label for="treem">Trẻ em</label><br />
+                    <select id="treem">
+                        <option selected>0 trẻ em</option>
+                        <option>1 trẻ em</option>
+                        <option>2 trẻ em</option>
+                        <option>3 trẻ em</option>
+                    </select>
+                </div>
+            </form>
+
+            <!--Nút đặt phòng-->
+            <button type="submit" class="col-xs-12 col-sm-12 col-md-2 col-lg-2">Đặt Phòng</button>
+        </div>
+    </header>
+
+    <a id="back-to-top" href="#" style="display:block; position:fixed; overflow:hidden; right:5%; bottom:5%; z-index:9999;" class="btn btn-primary btn-lg back-to-top" role="button" @*title="Nhấn để chuyển lên đầu trang"*@ data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+
+    @RenderBody()
+
+    <footer>
+
+        <!--Liên hệ-->
+        <div class="lienhe col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+            <!--Số điện thoại của chúng tôi-->
+            <div class="info col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <p class="title">
+                    Call us
+                </p>
+                <p class="detail">
+                    0313 888 635
+                </p>
+            </div>
+
+            <!--Email của chúng tôi-->
+            <div class="info col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <p class="title">
+                    Email us
+                </p>
+                <p class="detail">
+                    hailonghotelcatba@gmail.com
+                </p>
+            </div>
+
+            <!--Nhập email-->
+            <div class="feedback col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <input type="text" value="" placeholder="Enter your email ..." />
+                <button type="submit">Send</button>
+            </div>
+
+            <!--Mạng xã hội-->
+            <div class="social col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <!--Footer-->
+        <div class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+            <!--Địa chỉ-->
+            <div class="diachi col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+                <!--Logo-->
+                <a href="@Url.Action("Index","Home")">
+                    <img src="~/Content/images/logo-co.png" alt="" class="img-responsive" />
+                </a>
+
+                <!--Tên khách sạn-->
+                <p class="name-co">
+                    Khách sạn hải long cát bà
+                </p>
+                <p class="sologan">
+                    Cát bà là điểm đến - Hải long là điểm dừng
+                </p>
+
+                <!--Địa chỉ-->
+                <p class="address">
+                    <i class="fa fa-map-marker"></i>
+                    Số 234 đường 1/4 thị trấn Cát Bà - Hải Phòng
+                </p>
+            </div>
+
+            <!--Link nhanh-->
+            <div class="linknhanh col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    Link nhanh
+                </p>
+                <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <li><a href="@Url.Action("","Home")">Đặt phòng</a></li>
+                    <li><a href="@Url.Action("","Home")">Nhà hàng & Bar</a></li>
+                    <li><a href="@Url.Action("","Home")">Hội nghị - Sự kiện</a></li>
+                </ul>
+                <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <li><a href="@Url.Action("","Home")">Liên hệ</a></li>
+                    <li><a href="@Url.Action("","Home")">Dịch vụ khách sạn</a></li>
+                </ul>
+            </div>
+
+            <!--Mạng xã hội-->
+            <div class="fb hidden-xs hidden-sm col-md-4 col-lg-4">
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkhachsangiarecatba%2F%3Ffref%3Dts&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            </div>
+
+            <!--Mục bản quyền-->
+            <p class="end col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                &copy; 2016 Kết Nối Trẻ JSC. All rights reserved
+            </p>
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+    <script src="~/Scripts/Front/jquery.dlmenu.js"></script>
+    <script src="~/Scripts/Front/header-footer.js"></script>
+    <script src="~/Scripts/Front/myScripts.js"></script>
+
+    <!--menu trên di động-->
+    <script>
+        $(function () {
+
+            $(window).bind('scroll', function () {
+                var navHeight = $('.mobile').height();
+                if ($(window).scrollTop() > navHeight) {
+                    $('#dl-menu').addClass('fixed');
+                }
+                else {
+                    $('#dl-menu').removeClass('fixed');
+                }
+            });
+
+            $('#dl-menu').dlmenu({
+                animationClasses: { classin: 'dl-animate-in-5', classout: 'dl-animate-out-5' }
+            });
+        });
+    </script>
+
+</body>
+</html>
