@@ -1,0 +1,167 @@
+﻿/*Trang bài viết*/
+.baivietpg {
+    padding: 0;
+    height: 1%;
+    overflow: hidden;
+    margin: 2em 0 3em 0;
+}
+
+    /*Phần nội dung*/
+    .baivietpg > article {
+    }
+
+        /*Thông tin bài viết*/
+        .baivietpg > article > .thongtin {
+        }
+
+            .baivietpg > article > .thongtin > .tieude {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 2em;
+                margin: 0 0 0.1em 0;
+            }
+
+            .baivietpg > article > .thongtin > .thoigian {
+                font-style: italic;
+                color: rgb(255,87,34);
+            }
+
+        /*Nội dung bài viết*/
+        .baivietpg > article > .noidung {
+            padding: 0 5em 0 1em;
+        }
+
+            .baivietpg > article > .noidung > p {
+                text-align: justify;
+                letter-spacing: 0.5px;
+                font-size: 1.1em;
+                line-height: 1.7em;
+            }
+
+            .baivietpg > article > .noidung > img {
+                padding: 0 5em;
+                margin: 2em 0;
+            }
+
+    /*Bài viết khác*/
+    .baivietpg > aside {
+        padding: 0;
+    }
+
+        /*Tiêu đề*/
+        .baivietpg > aside > .tieude {
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            font-size: 2em;
+            padding: 0.5em 0;
+            background: rgb(75, 193, 240);
+            color: rgb(255, 255, 255);
+        }
+
+        /*Danh sách bài viêt*/
+        .baivietpg > aside > .cacbaiviet {
+            padding: 0;
+        }
+
+            /*Từng bài viết*/
+            .baivietpg > aside > .cacbaiviet > a {
+                padding: 0;
+                color: rgb(0, 0, 0);
+                margin: 1em 0;
+            }
+
+                .baivietpg > aside > .cacbaiviet > a > img {
+                    padding: 0;
+                }
+
+                .baivietpg > aside > .cacbaiviet > a > div {
+                }
+
+                    .baivietpg > aside > .cacbaiviet > a > div > .tieude {
+                        font-weight: bold;
+                        font-size: 1.1em;
+                        margin: 0 0 0.1em 0;
+                        transition: all .3s ease-in-out;
+                    }
+
+                .baivietpg > aside > .cacbaiviet > a:hover > div > .tieude {
+                    color: rgb(75, 193, 240);
+                }
+
+                .baivietpg > aside > .cacbaiviet > a > div > .tomtat {
+                    letter-spacing: 0.3px;
+                    text-align: justify;
+                }
+
+/*Giao diện cho màn hình lớn*/
+@media (min-width: 1400px) {
+}
+
+/*Giao diện cho tablet (ngang)*/
+@media (min-width: 992px) and (max-width: 1024px) {
+}
+
+/*Giao diện cho tablet (dọc)*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /*Phần nội dung*/
+    .baivietpg > article {
+        margin: 0 0 4em 0;
+    }
+
+        /*Nội dung bài viết*/
+        .baivietpg > article > .noidung {
+            padding: 0 1em;
+        }
+
+    /*Từng bài viết*/
+    .baivietpg > aside > .cacbaiviet > a {
+        width: 40%;
+        margin: 1.5em 5%;
+    }
+
+        .baivietpg > aside > .cacbaiviet > a > div > .tieude {
+            font-size: 1.5em;
+            margin: 0.5em 0 0 0;
+        }
+
+        .baivietpg > aside > .cacbaiviet > a > div > .tomtat {
+            font-size: 1.2em;
+        }
+}
+
+/*Giao diện cho điện thoại*/
+@media (max-width: 767px) {
+    /*Phần nội dung*/
+    .baivietpg > article {
+        margin: 0 0 2em 0;
+    }
+
+        /*Nội dung bài viết*/
+        .baivietpg > article > .noidung {
+            padding: 0 1em;
+        }
+
+            .baivietpg > article > .noidung > p {
+                font-size: 1.2em;
+            }
+
+            .baivietpg > article > .noidung > img {
+                padding: 0;
+                margin: 1em 0;
+            }
+
+    /*Từng bài viết*/
+    .baivietpg > aside > .cacbaiviet > a {
+        width: 90%;
+        margin: 1.2em 5%;
+    }
+
+        .baivietpg > aside > .cacbaiviet > a > div > .tieude {
+            font-size: 2em;
+        }
+
+        .baivietpg > aside > .cacbaiviet > a > div > .tomtat {
+            font-size: 1.3em;
+        }
+}

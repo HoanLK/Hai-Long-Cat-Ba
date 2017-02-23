@@ -1,0 +1,480 @@
+﻿body {
+    padding: 0;
+}
+
+header {
+    height: 1%;
+    overflow: hidden;
+    padding: 0;
+}
+
+    header > .desktop {
+        padding: 0.5em 0;
+        position: fixed;
+        z-index: 9999;
+        background: rgb(255,255,255);
+        height: 20vh;
+    }
+
+        /*Logo*/
+        header > .desktop > .logo {
+            text-align: center;
+            padding: 1em;
+        }
+
+            header > .desktop > .logo > a {
+            }
+
+                header > .desktop > .logo > a > img {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+
+        /*Nút chuyển ngữ & Menu*/
+        header > .desktop > .menu-lang {
+            padding: 0;
+        }
+
+            /*Nút chuyển ngôn ngữ*/
+            header > .desktop > .menu-lang > .lang {
+                height: 1%;
+                overflow: hidden;
+            }
+
+                header > .desktop > .menu-lang > .lang > a {
+                    margin: 0 0.5em;
+                }
+
+                    header > .desktop > .menu-lang > .lang > a > img {
+                    }
+
+            /*Menu*/
+            header > .desktop > .menu-lang > .menu {
+                height: 1%;
+                overflow: hidden;
+                padding: 0;
+            }
+
+                header > .desktop > .menu-lang > .menu > ul {
+                    list-style: none;
+                    height: 1%;
+                    overflow: hidden;
+                    margin: 1em 0 0 0;
+                }
+
+                    header > .desktop > .menu-lang > .menu > ul > li {
+                        float: left;
+                        padding: 1.1em 1.5em;
+                    }
+
+                        header > .desktop > .menu-lang > .menu > ul > li > a {
+                            font-size: 1em;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            color: rgb(66, 66, 66);
+                            text-decoration: none;
+                            transition: all .3s ease-in-out;
+                        }
+
+                            header > .desktop > .menu-lang > .menu > ul > li > a:hover {
+                                color: rgb(52, 152, 219);
+                            }
+
+                    header > .desktop > .menu-lang > .menu > ul > .phone {
+                        float: right;
+                        padding: 0;
+                        background: rgb(58, 196, 250);
+                    }
+
+                        header > .desktop > .menu-lang > .menu > ul > .phone > a {
+                            display: block;
+                            padding: 0.7em 2em;
+                            color: rgb(255, 255, 255);
+                            font-size: 1.3em;
+                        }
+
+                            header > .desktop > .menu-lang > .menu > ul > .phone > a > i {
+                                padding: 0 0.5em 0 0;
+                            }
+
+
+                            header > .desktop > .menu-lang > .menu > ul > .phone > a:hover {
+                                color: rgb(255, 255, 255);
+                            }
+
+    /*Đặt phòng*/
+    header > .book {
+        height: 13vh;
+        background: rgb(49, 58, 69);
+        padding: 1em 0 0.5em 0;
+        margin: 20vh 0 0 0;
+    }
+
+        /*Tiêu đề*/
+        header > .book > p {
+            font-size: 2.1em;
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 0.3em 0 0.3em 1em;
+            border-right: solid 1px rgba(255, 255, 255, .1);
+        }
+
+        /*Thông tin đặt phòng*/
+        header > .book > form {
+        }
+
+            /*Chọn ngày đến - đi*/
+            header > .book > form > .chonngay {
+                width: 25%;
+            }
+
+                /*Nhãn mục*/
+                header > .book > form > .chonngay > label {
+                    color: rgb(255, 255, 255);
+                }
+
+                /*Ô chọn ngày*/
+                header > .book > form > .chonngay > input {
+                    width: 90%;
+                    height: 2em;
+                    background: rgb(49, 58, 69);
+                    border: none;
+                    border-bottom: solid 1px rgb(255, 255, 255);
+                    color: rgb(255, 255, 255);
+                }
+
+            /*Chọn số lượng phòng - người lớn - trẻ em*/
+            header > .book > form > .select {
+                width: 16.5%;
+            }
+
+                /*Nhãn mục*/
+                header > .book > form > .select > label {
+                    color: rgb(255, 255, 255);
+                }
+
+                /*Ô chọn*/
+                header > .book > form > .select > select {
+                    width: 90%;
+                    height: 2em;
+                    background: rgb(49, 58, 69);
+                    border: none;
+                    border-bottom: solid 1px rgb(255, 255, 255);
+                    color: rgb(255, 255, 255);
+                }
+
+                    /*Giá trị chọn*/
+                    header > .book > form > .select > select > option {
+                        background: rgb(49, 58, 69);
+                    }
+
+        /*Nút đặt phòng*/
+        header > .book > button {
+            background: rgb(247, 196, 17);
+            border: none;
+            width: 10em;
+            height: 3.5em;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0 0 0 1em;
+        }
+
+/*liên hệ và footer*/
+footer {
+}
+
+    /*Liên hệ*/
+    footer > .lienhe {
+        background: rgb(75, 193, 240);
+        color: rgb(255, 255, 255);
+        padding: 1em 2em;
+    }
+
+        /*Số điện thoại và email*/
+        footer > .lienhe > .info {
+        }
+
+            footer > .lienhe > .info > .title {
+                text-transform: uppercase;
+                margin: 0 0 0.1em 0;
+            }
+
+            footer > .lienhe > .info > .detail {
+                font-weight: bold;
+                margin: 0;
+            }
+
+        /*Nhập email*/
+        footer > .lienhe > .feedback {
+        }
+
+            footer > .lienhe > .feedback > input {
+                display: block;
+                border: none;
+                width: 80%;
+                padding: 0.5em 0 0.5em 1em;
+                margin: 0 0.5em 0 0;
+                border-bottom: solid 1px rgb(255, 255, 255);
+                -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+                transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+                background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, rgb(255, 255, 255) 4%);
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, rgb(255, 255, 255) 4%);
+                background-position: -20em 0;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                color: rgb(255, 255, 255);
+                float: left;
+            }
+
+            ::-webkit-input-placeholder{
+                color: rgb(255, 255, 255);
+            }
+
+                footer > .lienhe > .feedback > input:focus {
+                    box-shadow: none;
+                    outline: none;
+                    background-position: 0 0;
+                }
+
+            footer > .lienhe > .feedback > button {
+                border: none;
+                background: rgb(75, 193, 240);
+                color: rgb(255, 255, 255);
+                text-transform: uppercase;
+                font-weight: bold;
+                padding: 0.54em;
+                transition: all .3s ease-in-out;
+            }
+
+                footer > .lienhe > .feedback > button:hover {
+                    color: rgb(75, 193, 240);
+                    background: rgb(255, 255, 255);
+                }
+
+        /**Mạng xã hội*/
+        footer > .lienhe > .social {
+            padding: 0.5em 2em;
+        }
+
+            footer > .lienhe > .social > a {
+                color: rgb(255, 255, 255);
+                padding: 0 0.5em;
+                font-size: 1.3em;
+            }
+
+                footer > .lienhe > .social > a > i {
+                }
+
+    footer > .footer {
+        height: 1%;
+        overflow: hidden;
+        background: rgb(49, 58, 69);
+        padding: 2em 0 0 0;
+    }
+
+        /*Địa chỉ*/
+        footer > .footer > .diachi {
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+            /*Logo*/
+            footer > .footer > .diachi > a {
+            }
+
+                footer > .footer > .diachi > a > img {
+                    margin: 0 auto;
+                }
+
+            /*Têm công ty*/
+            footer > .footer > .diachi > .name-co {
+                font-size: 1.6em;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding: 0.5em 0 0 0;
+            }
+
+            /*Sologan*/
+            footer > .footer > .diachi > .sologan {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 1.1em;
+            }
+
+            /*Địa chỉ chi tiết*/
+            footer > .footer > .diachi > .address {
+                font-weight: bold;
+                font-size: 1em;
+            }
+
+                footer > .footer > .diachi > .address > i {
+                }
+
+        /*Link nhanh*/
+        footer > .footer > .linknhanh {
+            background: url(../images/footer-bg.png) no-repeat;
+            background-size: 100%;
+            color: rgb(255, 255, 255);
+            padding: 3em 0 0 0;
+        }
+
+            footer > .footer > .linknhanh > p {
+                text-align: center;
+                font-size: 2em;
+                padding: 0 0 0.45em 0;
+            }
+
+            footer > .footer > .linknhanh > ul {
+                list-style: none;
+            }
+
+                footer > .footer > .linknhanh > ul > li {
+                    padding: 0.85em 0;
+                }
+
+                    footer > .footer > .linknhanh > ul > li > a {
+                        color: rgb(255, 255, 255);
+                        font-size: 1.1em;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                    }
+
+                        footer > .footer > .linknhanh > ul > li > a:hover {
+                            font-weight: bold;
+                        }
+
+        /*Mạng xã hội*/
+        footer > .footer > .fb {
+        }
+
+            footer > .footer > .fb > iframe {
+            }
+
+        /*Mục bản quyền*/
+        footer > .footer > .end {
+            height: 1%;
+            overflow: hidden;
+            font-size: 1.1em;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 1.5em 0 0 0;
+        }
+
+/*Giao diện cho tablet (dọc)*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /*Đặt phòng*/
+    header > .book {
+        height: 1%;
+        overflow: hidden;
+        padding: 2vh 2em;
+        margin: 0;
+    }
+
+        /*Tiêu đề*/
+        header > .book > p {
+            font-size: 3vh;
+            padding: 0;
+            border-right: none;
+        }
+
+        /*Thông tin đặt phòng*/
+        header > .book > form {
+            padding: 0;
+        }
+
+            /*Chọn ngày đến - đi*/
+            header > .book > form > .chonngay {
+                width: 50%;
+                margin: 0 0 2vh 0;
+            }
+
+                /*Nhãn mục*/
+                header > .book > form > .chonngay > label {
+                    font-size: 2vh;
+                }
+
+                /*Ô chọn ngày*/
+                header > .book > form > .chonngay > input {
+                    height: 3vh;
+                }
+
+            /*Chọn số lượng phòng - người lớn - trẻ em*/
+            header > .book > form > .select {
+                width: 33%;
+            }
+
+                /*Nhãn mục*/
+                header > .book > form > .select > label {
+                }
+
+                /*Ô chọn*/
+                header > .book > form > .select > select {
+                    width: 90%;
+                    height: 3vh;
+                }
+
+                    /*Giá trị chọn*/
+                    header > .book > form > .select > select > option {
+                    }
+
+        /*Nút đặt phòng*/
+        header > .book > button {
+            width: 40%;
+            height: 5vh;
+            font-size: 2vh;
+            margin: 4vh 30% 0 30%;
+        }
+}
+
+/*Giao diện cho điện thoại*/
+@media (max-width: 767px) {
+    /*Đặt phòng*/
+    header > .book {
+        height: 1%;
+        overflow: hidden;
+        padding: 1em;
+        margin: 0;
+    }
+
+        /*Tiêu đề*/
+        header > .book > p {
+            font-size: 3vh;
+            padding: 0;
+            border-right: none;
+        }
+
+        /*Chọn ngày đến - đi*/
+        header > .book > form > .chonngay {
+            width: 100%;
+            margin: 0 0 2vh 0;
+        }
+
+            /*Ô chọn ngày*/
+            header > .book > form > .chonngay > input {
+                width: 100%;
+                height: 3vh;
+            }
+
+        /*Chọn số lượng phòng - người lớn - trẻ em*/
+        header > .book > form > .select {
+            width: 100%;
+            margin: 0 0 2vh 0;
+        }
+
+            /*Ô chọn*/
+            header > .book > form > .select > select {
+                width: 100%;
+                height: 3vh;
+                border: none;
+                border-bottom: solid 1px rgb(255, 255, 255);
+            }
+
+        /*Nút đặt phòng*/
+        header > .book > button {
+            width: 50%;
+            height: 8vh;
+            margin: 2vh 25% 2vh 25%;
+        }
+}
