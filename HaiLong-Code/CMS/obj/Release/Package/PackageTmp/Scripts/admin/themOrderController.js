@@ -1,7 +1,7 @@
 ﻿myApp.controller("themOrderController", ['$scope', '$http', '$window', '$location', '$filter', 'Url', function ($scope, $http, $window, $location, $filter, Url) {
     $scope.Order = {};
-    $scope.idProduct = angular.element('#idProductCurrent').val();
-    $scope.price;
+    //$scope.idProduct = angular.element('#idProductCurrent').val();
+    //$scope.price;
 
     Init();
 
@@ -15,18 +15,18 @@
                 $scope.Order = {
                     idOrder: data.idOrder,
                     hoTen: data.hoTen,
-                    diaChi: data.diaChi,
+                    ngayDen: data.ngayDen,
                     SDT: data.SDT,
-                    email: data.email,
-                    sanPham: data.sanPham,
-                    soLuong: data.soLuong,
-                    idProduct: data.idProduct,
+                    ngayDi: data.ngayDi,
+                    soPhong: data.soPhong,
+                    nguoiLon: data.nguoiLon,
+                    treEm: data.treEm,
                 };
 
-                $http.get('/API/ProductsAPI/' + $scope.Order.idProduct)
-            .success(function (product) {
-                $scope.price = product.price;
-            })
+            //    $http.get('/API/ProductsAPI/' + $scope.Order.idProduct)
+            //.success(function (product) {
+            //    $scope.price = product.price;
+            //})
             });
     }
         //Không thì thiết lập giá trị mặc định
@@ -34,12 +34,12 @@
     }
 
     //lấy giá sản phẩm
-    function Init() {
-        $http.get('/API/ProductsAPI/' + $scope.Order.idProduct)
-            .success(function (product) {
-                $scope.price = product.price;
-            })
-    }
+    //function Init() {
+    //    $http.get('/API/ProductsAPI/' + $scope.Order.idProduct)
+    //        .success(function (product) {
+    //            $scope.price = product.price;
+    //        })
+    //}
 
     ////Lưu Order
     //$scope.saveOrder = function () {

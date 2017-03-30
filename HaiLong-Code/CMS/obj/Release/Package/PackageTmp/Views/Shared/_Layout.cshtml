@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--SEO-->
-    <title>@ViewBag.Title</title>
+    <title>@ViewBag.Title - khách sạn Hải Long</title>
     <meta name="description" content="@((ViewBag.Description!=null)?ViewBag.Description:"")" />
     <meta name="keywords" content='@((ViewBag.Keywords!=null)?ViewBag.Keywords:"")' />
     <meta name="revisit-after" content="1 days" />
     <meta name="robots" content='@((ViewBag.Robots!=null)?ViewBag.Robots:"index, noop, follow")' />
     <meta http-equiv="content-language" content="vi" />
-    <link href="~/Content/Front/images/logo.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Front/images/logo-co.png" rel="shortcut icon" type="image/x-icon" />
     <link rel="alternate" href="" hreflang="vi" />
 
     <meta itemprop="name" content='@((ViewBag.Title!=null)?ViewBag.Title : "")'>
@@ -33,168 +33,365 @@
     <link rel="image_src" href='@((ViewBag.Image!=null)?ViewBag.Image:"")' />
 
     <!--Site-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+    @*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 
-    <link href="~/Content/Front/css/header-footer.css" rel="stylesheet" />
-    <link href="~/Content/Front/css/trangchu.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+    <link href="~/Content/Front/css/_Layout.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/Menu-Mobile.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/TrangChu.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/PhongNghi.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/DichVu.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/NhaHangSuKien.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/BaiViet.min.css" rel="stylesheet" />
+
     <style>
         .fixed {
             position: fixed;
             top: 0;
             z-index: 1;
         }
+
+        .shadow {
+            box-shadow: 0px 2px 5px rgba(0,0,0,.3);
+        }
     </style>
-    <script src="~/Scripts/front/modernizr.custom.js"></script>
+    <script src="~/Content/Front/js/modernizr.custom.min.js"></script>
 </head>
-<body ng-app="frontApp">
-
-    <header class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-        <!--Giao diện máy tính-->
+<body ng-app="frontApp" @*class="row"*@>
+    <header>
+        <!--Menu cho desktop-->
         <div class="desktop hidden-xs hidden-sm col-md-12 col-lg-12">
-            <div class="header-top col-md-12 col-lg-12">
-                <div class="logo col-md-6 col-lg-6">
-                    <a href="@Url.Action("Index", "Home" )">
-                        <img src="~/Content/Front/images/logo.png" alt="" class="col-md-4 col-lg-4" />
-                        <p class="col-md-8 col-lg-8">
-                            Chăn ga - gối đệm - nội thất <br />
-                            mành rèm hùng tuyết
-                        </p>
-                    </a>
-                </div>
-                <div class="sologan col-md-6 col-lg-6">
-                    <div class="col-md-12 col-lg-12">
-                        <img src="~/Content/Front/images/header.png" alt="" />
-                    </div>
-                    <p class="col-md-12 col-lg-12">"Nơi tôn vinh vẻ đẹp căn nhà của bạn !"</p>
-                </div>
+
+            <!--Logo công ty-->
+            <div class="logo col-md-2 col-lg-2">
+                <a href="@Url.Action("Index","Home")">
+                    <img src="~/Content/Front/images/logo-co.png" alt="" class="img-responsive" />
+                </a>
             </div>
-            <div class="menu col-md-12 col-lg-12">
-                <ul class="list col-md-8 col-lg-8">
-                    <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Trang chủ</a></li>
-                    <li><a href="/gioi-thieu">Giới thiệu</a></li>
-                    <li><a href="/danh-muc-san-pham">Sản phẩm</a></li>
-                    <li><a href="/danh-muc-bai-viet/huong-dan-2">Hướng dẫn</a></li>
-                    <li><a href="/danh-muc-bai-viet/tu-van-3">Tư vấn</a></li>
-                    <li><a href="/lien-he">Liên hệ</a></li>
-                </ul>
-                <ul class="social col-md-4 col-lg-4">
-                    <li><a href="#" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-google-plus"></a></li>
-                    <li><a href="#" class="fa fa-youtube-play"></a></li>
-                </ul>
+
+            <!--Nút chuyển ngôn ngữ và menu-->
+            <div class="menu-lang col-md-10 col-lg-10">
+
+                <!--Nút chuyển ngôn ngữ-->
+                <div class="lang col-md-12 col-lg-12">
+                    <div id="google_translate_element" style="display: block; float: right; margin-right: 3em;"></div>
+                    @*<a href="#" class="pull-right">
+                            <img src="~/Content/Front/images/EN-ico.png" alt="" class="img-responsive" />
+                        </a>
+                        <a href="#" class="pull-right">
+                            <img src="~/Content/Front/images/VN-ico.png" alt="" class="img-responsive" />
+                        </a>*@
+                </div>
+
+                <!--Menu-->
+                <nav class="menu col-md-12 col-lg-12">
+                    <ul>
+                        <li><a href="@Url.Action(" Index","Home")">Trang chủ</a></li>
+                        <li><a href="/danh-muc-bai-viet/phong-nghi">Phòng nghỉ</a></li>
+                        <li><a href="/danh-muc-bai-viet/nha-hang-va-su-kien">Nhà hàng & sự kiên</a></li>
+                        <li><a href="/danh-muc-bai-viet/dich-vu-khach-san">Dịch vụ khách sạn</a></li>
+                        <li><a href="/danh-muc-bai-viet/tuyen-dung-5">Tuyển dụng</a></li>
+                        <li><a href="/lien-he">Liên hệ</a></li>
+                        <li class="phone"><a href="tel:0313888635"><i class="fa fa-phone"></i>0313 888 635</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
 
-        <!--Giao diện điện thoại-->
-        <div class="mobile hidden-md hidden-lg">
+        <!--Giao diện cho di động-->
+        <div class="mobile col-xs-12 col-sm-12 hidden-md hidden-lg">
             <nav id="dl-menu" class="dl-menuwrapper">
                 <button class="dl-trigger">Open Menu</button>
                 <div>
-                    <a href="@Url.Action("Index","Home")" class="logo"><img src="~/Content/Front/images/logo.png" alt="" /></a>
+                    <a href="@Url.Action(" Index","Home")" class="logo"><img src="~/Content/Front/images/logo-co.png" alt="" /></a>
+                    <a href="tel:0313888635" class="phone">0313.888.635</a>
                     <a id="button-search" class="search"><i class="fa fa-search search-btn"></i></a>
                 </div>
                 <ul class="dl-menu">
-                    <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Trang chủ</a></li>
-                    <li><a href="/gioi-thieu">Giới thiệu</a></li>
-                    <li><a href="/danh-muc-san-pham">Sản phẩm</a></li>
-                    <li><a href="/danh-muc-bai-viet/huong-dan-2">Hướng dẫn</a></li>
-                    <li><a href="/danh-muc-bai-viet/tu-van-3">Tư vấn</a></li>
+                    <li><a href="@Url.Action(" Index","Home")">Trang chủ</a></li>
+                    <li><a href="/danh-muc-bai-viet/phong-nghi">Phòng nghỉ</a></li>
+                    <li><a href="/danh-muc-bai-viet/nha-hang-va-su-kien">Nhà hàng & sự kiên</a></li>
+                    <li><a href="/danh-muc-bai-viet/dich-vu-khach-san">Dịch vụ khách sạn</a></li>
+                    <li><a href="/danh-muc-bai-viet/tuyen-dung-5">Tuyển dụng</a></li>
                     <li><a href="/lien-he">Liên hệ</a></li>
                 </ul>
                 <input type="text" placeholder="Nhập tìm kiếm ..." value="" id="search-box" class="search-box" />
             </nav>
+        </div>
 
+        <!--Đặt phòng-->
+        <div class="book col-xs-12 col-xs-12 col-md-12 col-lg-12" ng-controller="themOrderController">
+
+            <!--Tiêu đè-->
+            <p class="col-xs-12 col-sm-12 col-md-2 col-lg-2">Đặt phòng</p>
+
+            <!--Thông tin đặt phòng-->
+            <form class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <div class="chonngay pull-left">
+                    <label>Ngày đến</label><br />
+                    <input type="text" class="date" id="datepicker1" ng-model="order.ngayDen" />
+                </div>
+                <div class="chonngay pull-left">
+                    <label>Ngày đi</label><br />
+                    <input type="text" class="date" id="datepicker2" ng-model="order.ngayDi" />
+                </div>
+                <div class="select pull-left">
+                    <label for="soluongphong">Số lượng phòng</label><br />
+                    <select id="soluongphong" ng-model="order.soPhong">
+                        <option value="1" ng-selected="order.soPhong == 1">1 phòng</option>
+                        <option value="2" ng-selected="post.soPhong == 2">2 phòng</option>
+                        <option value="3" ng-selected="post.soPhong == 3">3 phòng</option>
+                        <option value="4" ng-selected="post.soPhong == 4">4 phòng</option>
+                        <option value="5" ng-selected="post.soPhong == 5">5 phòng</option>
+                        <option value="6" ng-selected="post.soPhong == 6">6 phòng</option>
+                        <option value="7" ng-selected="post.soPhong == 7">7 phòng</option>
+                        <option value="8" ng-selected="post.soPhong == 8">8 phòng</option>
+                        <option value="9" ng-selected="post.soPhong == 9">9 phòng</option>
+                        <option value="10" ng-selected="post.soPhong == 10">10 phòng</option>
+                    </select>
+                </div>
+                <div class="select pull-left">
+                    <label for="nguoilon">Người lớn</label><br />
+                    <select id="nguoilon" ng-model="order.nguoiLon">
+                        <option value="1" ng-selected="order.nguoiLon == 1">1 người</option>
+                        <option value="2" ng-selected="order.nguoiLon == 2">2 người</option>
+                        <option value="3" ng-selected="order.nguoiLon == 3">3 người</option>
+                        <option value="4" ng-selected="order.nguoiLon == 4">4 người</option>
+                        <option value="5" ng-selected="order.nguoiLon == 5">5 người</option>
+                        <option value="6" ng-selected="order.nguoiLon == 6">6 người</option>
+                        <option value="7" ng-selected="order.nguoiLon == 7">7 người</option>
+                        <option value="8" ng-selected="order.nguoiLon == 8">8 người</option>
+                        <option value="9" ng-selected="order.nguoiLon == 9">9 người</option>
+                        <option value="10" ng-selected="order.nguoiLon == 10">10 người</option>
+                        <option value="11" ng-selected="order.nguoiLon == 11">11 người</option>
+                        <option value="12" ng-selected="order.nguoiLon == 12">12 người</option>
+                        <option value="13" ng-selected="order.nguoiLon == 13">13 người</option>
+                        <option value="14" ng-selected="order.nguoiLon == 14">14 người</option>
+                        <option value="15" ng-selected="order.nguoiLon == 15">15 người</option>
+                        <option value="16" ng-selected="order.nguoiLon == 16">16 người</option>
+                        <option value="17" ng-selected="order.nguoiLon == 17">17 người</option>
+                        <option value="18" ng-selected="order.nguoiLon == 18">18 người</option>
+                        <option value="19" ng-selected="order.nguoiLon == 19">19 người</option>
+                        <option value="20" ng-selected="order.nguoiLon == 20">20 người</option>
+                    </select>
+                </div>
+                <div class="select pull-left">
+                    <label for="treem">Trẻ em</label><br />
+                    <select id="treem" ng-model="order.treEm">
+                        <option value="0" ng-selected="order.treEm == 0">Không có trẻ em</option>
+                        <option value="1" ng-selected="order.treEm == 1">1 trẻ em</option>
+                        <option value="2" ng-selected="order.treEm == 2">2 trẻ em</option>
+                        <option value="3" ng-selected="order.treEm == 3">3 trẻ em</option>
+                        <option value="4" ng-selected="order.treEm == 4">4 trẻ em</option>
+                        <option value="5" ng-selected="order.treEm == 5">5 trẻ em</option>
+                        <option value="6" ng-selected="order.treEm == 6">6 trẻ em</option>
+                        <option value="7" ng-selected="order.treEm == 7">7 trẻ em</option>
+                        <option value="8" ng-selected="order.treEm == 8">8 trẻ em</option>
+                        <option value="9" ng-selected="order.treEm == 9">9 trẻ em</option>
+                    </select>
+                </div>
+            </form>
+
+            <!--Nút đặt phòng-->
+            <button type="submit" data-toggle="modal" data-target="#myModal" class="col-xs-12 col-sm-12 col-md-2 col-lg-2">Đặt Phòng</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog" style="z-index:10000;">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Thông tin người đặt phòng</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group " ng-class="{'has-error':!order.hoTen, 'has-success':order.hoTen}">
+                                <label for="hoTen">Họ tên: *</label>
+                                <input type="text" class="form-control" id="hoTen" ng-model="order.hoTen">
+                            </div>
+                            <div class="form-group " ng-class="{'has-error':!order.SDT, 'has-success':order.SDT}">
+                                <label for="SDT">Số điện thoại: *</label>
+                                <input type="text" class="form-control" id="SDT" ng-model="order.SDT">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="SaveOrder()">Đặt phòng</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </header>
+
+    <a id="back-to-top" href="#" style="display:block; position:fixed; overflow:hidden; right:5%; bottom:5%; z-index:9999;" class="btn btn-primary btn-lg back-to-top" role="button" @*title="Nhấn để chuyển lên đầu trang" *@ data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+
     @RenderBody()
-    <footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="add col-xs-12 col-sm-4 col-md-5 col-lg-5">
-            <div class="info col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <p class="co-name col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    Công ty THHH SX thương mại và dịch vụ Hùng Tuyết
+
+    <footer>
+
+        <!--Liên hệ-->
+        <div class="lienhe col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+            <!--Số điện thoại của chúng tôi-->
+            <div class="info col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <p class="title">
+                    Call us
                 </p>
-                <p class="co-if col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span>Địa chỉ:</span> 43 N Đường Lê Lai ,phường Máy Chai ,Quận Ngô Quyền ,Tp Hải Phòng <br />
-                    <span>ĐT:</span> 01266.419.960 - 0904.482.018 - 0904.245.998 <br />
-                    <span>Email:</span> hungtuyet1970@gmail .com
+                <p class="detail">
+                    0313 888 635
                 </p>
             </div>
-            <div class="map col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3728.17002685255!2d106.69719731450142!3d20.865195986087144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a7ae823bb8a31%3A0xd45441a2390a4f5f!2zNDMgTMOqIExhaSwgTcOheSBDaGFpLCBOZ8O0IFF1eeG7gW4sIEjhuqNpIFBow7JuZywgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1477586708817" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+            <!--Email của chúng tôi-->
+            <div class="info col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <p class="title">
+                    Email us
+                </p>
+                <p class="detail">
+                    hailonghotelcatba@gmail.com
+                </p>
+            </div>
+
+            <!--Nhập email-->
+            <div class="feedback col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <input type="text" value="" placeholder="Enter your email ..." />
+                <button type="submit">Send</button>
+            </div>
+
+            <!--Mạng xã hội-->
+            <div class="social col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
             </div>
         </div>
-        <div class="follow col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <p class="chanel">
-                <span>Kênh thông tin</span><br />
-                Nhập Email để có thể nhận được thông tin đầy đủ và mới nhất mỗi khi có khuyến mãi.
+
+        <!--Footer-->
+        <div class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+            <!--Địa chỉ-->
+            <div class="diachi col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+                <!--Logo-->
+                <a href="@Url.Action(" Index","Home")">
+                    <img src="~/Content/Front/images/logo-co.png" alt="" class="img-responsive" />
+                </a>
+
+                <!--Tên khách sạn-->
+                <p class="name-co">
+                    Khách sạn hải long cát bà
+                </p>
+                <p class="sologan">
+                    Cát bà là điểm đến - Hải long là điểm dừng
+                </p>
+
+                <!--Địa chỉ-->
+                <p class="address">
+                    <i class="fa fa-map-marker"></i>
+                    Số 234 đường 1/4 thị trấn Cát Bà - Hải Phòng
+                </p>
+            </div>
+
+            <!--Link nhanh-->
+            <div class="linknhanh col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    Link nhanh
+                </p>
+                <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <li><a href="@Url.Action(" "," Home")">Đặt phòng</a></li>
+                    <li><a href="/danh-muc-bai-viet/phong-nghi">Nhà hàng & Bar</a></li>
+                    <li><a href="/danh-muc-bai-viet/nha-hang-va-su-kien">Hội nghị - Sự kiện</a></li>
+                </ul>
+                <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <li><a href="/lien-he">Liên hệ</a></li>
+                    <li><a href="/danh-muc-bai-viet/dich-vu-khach-san">Dịch vụ khách sạn</a></li>
+                </ul>
+            </div>
+
+            <!--Mạng xã hội-->
+            <div class="fb hidden-xs hidden-sm col-md-4 col-lg-4">
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkhachsangiarecatba%2F%3Ffref%3Dts&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            </div>
+
+            <!--Mục bản quyền-->
+            <p class="end col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                &copy; 2017 Kết Nối Trẻ JSC. All rights reserved
             </p>
-            <form class="signup">
-                <input type="text" value="" placeholder="Nhập email của bạn...." />
-                <button type="submit">Đăng ký</button>
-            </form>
-            <div class="social">
-                <a href="#" class="fa fa-facebook-square"></a>
-                <a href="#" class="fa fa-twitter-square"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="#" class="fa fa-google-plus-square"></a>
-                <a href="#" class="fa fa-youtube-square"></a>
-            </div>
-            <div class="like">
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FKetnoitreJsc&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-            </div>
-        </div>
-        <div class="menu col-xs-12 col-sm-4 col-md-3 col-lg-3">
-            <ul>
-                <li><a href="@Url.Action(" Index","Home")">Trang chủ</a></li>
-                <li><a href="/gioi-thieu">Giới thiệu</a></li>
-                <li><a href="/danh-muc-san-pham">Sản phẩm</a></li>
-                <li><a href="/danh-muc-bai-viet/huong-dan-2">Hướng dẫn</a></li>
-                <li><a href="/danh-muc-bai-viet/tu-van-3">Tư vấn</a></li>
-                <li><a href="/lien-he">Liên hê</a></li>
-            </ul>
         </div>
     </footer>
 
     <!--jquery-->
-    @*<script src="~/Scripts/jquery-3.1.1.min.js"></script>
-        <script src="~/Scripts/bootstrap.min.js"></script>*@
+    @*<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>*@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    @*<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 
     <!--AngularJS-->
     @*<script src="~/Scripts/angular.min.js"></script>*@
+    <script src="~/Scripts/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     @*<script src="~/Scripts/angular-sanitize.min.js"></script>*@
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
     <script src="~/Scripts/angular-cookies.min.js"></script>
 
     <!--Message-->
-    @*<script src="~/Content/admin/js/libs/toastr/toastr.min.js"></script>
+    <script src="~/Content/admin/js/libs/toastr/toastr.min.js"></script>
     <script>
         $(document).ready(function () {
             toastr.options = {
                 "positionClass": "toast-bottom-left"
             };
         });
-    </script>*@
+    </script>
+
+    <!--Tự viết-->
+    <script src="~/Content/Front/js/jquery.dlmenu.min.js"></script>
+    <script src="~/Content/Front/js/header-footer.min.js"></script>
+    <script src="~/Content/Front/js/myScripts.min.js"></script>
+
+    <!--menu trên di động-->
+    <script>
+        $(function () {
+
+            $(window).bind('scroll', function () {
+                var navHeight = $('.mobile').height();
+                if ($(window).scrollTop() > navHeight) {
+                    $('#dl-menu').addClass('fixed');
+                }
+                else {
+                    $('#dl-menu').removeClass('fixed');
+                }
+            });
+
+            $('#dl-menu').dlmenu({
+                animationClasses: { classin: 'dl-animate-in-5', classout: 'dl-animate-out-5' }
+            });
+        });
+    </script>
 
     <!--AngularJS custom-->
     <script src="~/Scripts/Front/frontApp.js"></script>
     <script src="~/Scripts/Front/pagination/dirPagination.min.js"></script>
 
-    <script src="~/Scripts/front/jquery.dlmenu.min.js"></script>
-    <script src="~/Scripts/front/header-footer.min.js"></script>
-    <script src="~/Scripts/front/trangchu.min.js"></script>
-
     <!--Loading-->
     <script src="~/Scripts/loading-spinner/spin.min.js"></script>
     <script src="~/Scripts/loading-spinner/angular-spinner.min.js"></script>
     <script src="~/Scripts/loading-spinner/angular-loading-spinner.js"></script>
+
+    <!--Trang chủ-->
+    <script src="~/Scripts/front/homeController.min.js"></script>
 
     <!--Banner-->
     <script src="~/Scripts/Front/bannerController.min.js"></script>
@@ -216,14 +413,11 @@
     <!--Product-->
     <script src="~/Scripts/Front/productController.min.js"></script>
 
-    <!--Search-->
-    <script src="~/Scripts/Front/searchController.min.js"></script>
-
     <!--Contact-->
     <script src="~/Scripts/Front/contactController.min.js"></script>
 
-    <!--Order-->
-    @*<script src="~/Scripts/Front/themOrderController.min.js"></script>*@
+    <!--Đặt phòng-->
+    <script src="~/Scripts/Front/themOrderController.min.js"></script>
 
     <!--Image-->
     <script src="~/Scripts/front/imageController.min.js"></script>
@@ -232,23 +426,12 @@
     <script src="~/Scripts/Front/searchController.min.js"></script>
     <script src="~/Scripts/Front/showSearchController.min.js"></script>
 
-    <script>
-        $(function () {
-
-            $(window).bind('scroll', function () {
-                var navHeight = $('.mobile').height();
-                if ($(window).scrollTop() > navHeight) {
-                    $('#dl-menu').addClass('fixed');
-                }
-                else {
-                    $('#dl-menu').removeClass('fixed');
-                }
-            });
-
-            $('#dl-menu, #search-box').dlmenu({
-                animationClasses: { classin: 'dl-animate-in-5', classout: 'dl-animate-out-5' }
-            });
-        });
+    <!--Translate-->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'vi', includedLanguages: 'en,vi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
     </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

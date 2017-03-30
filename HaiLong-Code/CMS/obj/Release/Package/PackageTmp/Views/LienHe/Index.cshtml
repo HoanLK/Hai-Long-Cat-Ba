@@ -1,42 +1,13 @@
 ﻿
 @{
     ViewBag.Title = "Liên hệ";
-    Layout = "~/Views/Shared/_Layout2.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section class="about-us tutorial col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <!--Giới thiệu về công ty-->
-    <article class="gioithieu col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <img src="~/Content/Front/images/gioithieu/banner.png" alt="" class="col-xs-12 col-sm-6 col-md-7 col-lg-7" />
-        <div class="info col-xs-12 col-sm-6 col-md-5 col-lg-5">
-            <p class="co-name col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                công ty TNHH SX thương mại và dịch vụ hùng tuyết
-            </p>
-            <p class="co-info col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <span class="first">Đại diện: </span>(Bà) Nguyễn Thị Tuyết<br />
-                <span class="first">Chức vụ: </span>Chủ doanh nghiệp<br />
-                <span class="first">Địa chỉ: </span>43N Lê Lai, Ngô Quyền, Hải Phòng.<br />
-                <span class="first">Điện thoại: </span>0313.654.097 - 0904.482.018<br />
-                <span class="first">Email: </span>hungtuyet1970@gmail.com<br />
-                <span class="first">Ngành nghề kinh doanh: </span><br /><span class="nganhnghe">CHĂN GA - MÀNH RÈM - GỐI ĐỆM</span>
-            </p>
-        </div>
-    </article>
-
-    <!--Danh mục sản phẩm & Bài viết nổi bật & có thể bạn quan tâm-->
-    <aside class="hidden-xs hidden-sm col-md-3 col-lg-3">
-
-        <!--Danh mục-->
-        <div class="danhmuc col-md-12 col-lg-12" ng-controller="categoryProductController">
-            <ul>
-                <li class="tieude">Danh mục sản phẩm</li>
-                <li><a href="/danh-muc-san-pham/{{value.alias}}-{{value.idCategory}}" ng-repeat="(index, value) in categoryProducts">{{value.title}}</a></li>
-            </ul>
-        </div>
-    </aside>
-
-    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 lienHe" ng-controller="ContactController">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thongTin">
+<section class="about-us tutorial col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top:1em;">
+    <p style="font-size: 3em; color: #313a45; text-align: center; padding: 1em 0;">Liên hệ với chúng tôi</p>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 lienHe" ng-controller="ContactController">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thongTin" style="margin-bottom:1em;">
             <div class="form-group" ng-class="{'has-error':!Contact.hoten, 'has-success':Contact.hoten}">
                 <input type="text" class="form-control" id="name" placeholder="Họ tên (bắt buộc)" ng-model="Contact.hoten">
             </div>
@@ -46,7 +17,7 @@
             <div class="form-group col-md-6 col-sm-6 col-xs-12" ng-class="{'has-error':!Contact.sdt, 'has-success':Contact.sdt}" style="padding-left:0;">
                 <input type="text" class="form-control" id="sdt" placeholder="Số điện thoại (bắt buộc)" ng-model="Contact.sdt">
             </div>
-            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group col-md-6 col-sm-6 col-xs-12" style="padding-right:0;">
                 <input type="email" class="form-control" id="email" placeholder="Email" ng-model="Contact.email">
             </div>
             <div class="form-group">
@@ -55,7 +26,10 @@
             <div class="form-group">
                 <textarea class="form-control" rows="10" id="noidung" placeholder="Nội dung liên hệ" ng-model="Contact.content"></textarea>
             </div>
-            <button type="button" class="btn btn-info" ng-click="SaveContact()">Gửi</button>
+            <button type="button" class="btn btn-info" ng-click="SaveContact()" style="padding: 0.5em 2em; float: right;">Gửi</button>
         </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.6775609893257!2d107.04835121443092!3d20.723314086164667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a443466ed9289%3A0xe0c05a258bce227f!2zS2jDoWNoIHPhuqFuIEjhuqNpIExvbmcgQ8OhdCBCw6A!5e0!3m2!1svi!2s!4v1487824517220" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
 </section>

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Mành  rèm Hùng Tuyết - @ViewBag.Title</title>
+    <title>Khách sạn Hải Long - @ViewBag.Title</title>
 
     <!-- BEGIN META -->
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="your,keywords">
     <meta name="description" content="Short explanation about this website">
-    <link href="~/Content/Front/images/logo.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Front/images/logo-co.png" rel="shortcut icon" type="image/x-icon" />
     <link rel="alternate" href="" hreflang="vi" />
 
     <!-- BEGIN STYLESHEETS -->
@@ -50,7 +50,7 @@
                     <li class="header-nav-brand">
                         <div class="brand-holder">
                             <a href="/">
-                                <span class="text-lg text-bold text-primary">Mành rèm Hùng Tuyết</span>
+                                <span class="text-lg text-bold text-primary">Khách sạn Hải Long</span>
                             </a>
                         </div>
                     </li>
@@ -156,17 +156,17 @@
                         </ul>
                     </li>
                     <!-- Sản phẩm -->
-                    <li class="gui-folder">
+                    @*<li class="gui-folder">
                         <a>
                             <div class="gui-icon"><i class="fa fa-laptop"></i></div>
                             <span class="title">Sản phẩm</span>
                         </a>
-                        <!--start submenu-->
+                        
                         <ul>
                             <li><a href="@Url.Action("Index", "Products", new { Area = "Admin" })"><span class="title">Sản phẩm</span></a></li>
                             <li><a href="@Url.Action("Index", "CategoryProducts", new { Area = "Admin" })"><span class="title">Danh mục sản phẩm</span></a></li>
                         </ul>
-                    </li>
+                    </li>*@
                     @*<li>
                             <a href="@Url.Action("Index", "Products", new { Area = "Admin" })">
                                 <div class="gui-icon"><i class="fa fa-laptop"></i></div>
@@ -174,24 +174,24 @@
                             </a>
                         </li>*@
                     <!--Đơn hàng-->
-                    @*<li class="gui-folder">
+                    <li class="gui-folder">
                         <a>
                             <div class="gui-icon"><i class="fa fa-shopping-cart"></i></div>
-                            <span class="title">Đơn hàng</span>
+                            <span class="title">Đặt phòng</span>
                         </a>
                         <!--start submenu--!>
                         <ul>
-                            <li><a href="@Url.Action("Index", "Orders", new { Area = "Admin" })"><span class="title">Đơn hàng chưa xử lý</span></a></li>
-                            <li><a href="@Url.Action("Checked", "Orders", new { Area = "Admin" })"><span class="title">Đơn hàng đã xử lý</span></a></li>
+                            <li><a href="@Url.Action("Index", "Orders", new { Area = "Admin" })"><span class="title">Chưa xử lý</span></a></li>
+                            <li><a href="@Url.Action("Checked", "Orders", new { Area = "Admin" })"><span class="title">Đã xử lý</span></a></li>
                         </ul>
-                    </li>*@
+                    </li>
                     <!--Banner-->
-                    <li>
+                    @*<li>
                         <a href="@Url.Action("Index", "Banners", new { Area = "Admin" })">
                             <div class="gui-icon"><i class="fa fa-image"></i></div>
                             <span class="title">Banner</span>
                         </a>
-                    </li>
+                    </li>*@
                     <!--Contact-->
                     <li>
                         <a href="@Url.Action("Index", "Contacts", new { Area = "Admin" })">
@@ -207,12 +207,12 @@
                         </a>
                     </li>*@
                     <!--Image-->
-                    <li>
+                    @*<li>
                         <a href="@Url.Action("Index", "Images", new { Area = "Admin" })">
                             <div class="gui-icon"><i class="fa fa-file-image-o"></i></div>
                             <span class="title">Hình ảnh</span>
                         </a>
-                    </li>
+                    </li>*@
                     <!--Account-->
                     <li>
                         <a href="@Url.Action("Index", "Account" , new { Area="" })">
@@ -231,7 +231,7 @@
 
                 <div class="menubar-foot-panel">
                     <small class="no-linebreak hidden-folded">
-                        <span class="opacity-75">Copyright &copy; 2016</span> <strong>Kết nối trẻ</strong>
+                        <span class="opacity-75">Copyright &copy; 2017</span> <strong>Kết nối trẻ</strong>
                     </small>
                 </div>
             </div>
@@ -248,9 +248,10 @@
         <script src="~/Content/admin/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
         <script src="~/Content/admin/js/libs/bootstrap/bootstrap.min.js"></script>*@
 
-    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    @*<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>*@
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 
     <!--CKEditor-->
     <script type="text/javascript" src='@Url.Content("~/ckfinder/ckfinder.js")'></script>
@@ -259,7 +260,8 @@
 
 
     <!--AngularJS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>*@
+    <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-sanitize.min.js"></script>
 
 
@@ -356,9 +358,6 @@
     <!--Contact-->
     <script src="~/Scripts/admin/danhsachContactController.min.js"></script>
     <script src="~/Scripts/admin/themContactController.min.js"></script>
-    <!--Image-->
-    <script src="~/Scripts/admin/themImageController.min.js"></script>
-    <script src="~/Scripts/admin/danhsachImageController.min.js"></script>
 </body>
 
 </html>

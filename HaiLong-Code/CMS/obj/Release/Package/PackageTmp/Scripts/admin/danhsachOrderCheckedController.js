@@ -6,6 +6,11 @@
     //Lấy danh sách Post
     $http.get('/Orders/GetAllOrdersChecked/').success(function (data) {
         $scope.gridOptions.data = data;
+        angular.forEach($scope.gridOptions.data, function (value, index) {
+            console.log(value.ngayDen);
+            $scope.gridOptions.data[index].ngayDen = new Date(parseInt(value.ngayDen.substr(6)));
+            $scope.gridOptions.data[index].ngayDi = new Date(parseInt(value.ngayDi.substr(6)));
+        });
     });
 
     //Tùy chỉnh Column
@@ -33,29 +38,26 @@
             enableSorting: false
         },
         {
-            displayName: "Địa chỉ",
-            name: 'diaChi',
-            enableSorting: false
-        },
-        {
             displayName: "SĐT",
             name: 'SDT',
             enableSorting: false
         },
         {
-            displayName: "Email",
-            name: 'email',
+            displayName: "Số phòng",
+            name: 'soPhong',
             enableSorting: false
         },
         {
-            displayName: "Sản phẩm",
-            name: 'sanPham',
+            displayName: "Ngày đến",
+            name: 'ngayDen',
+            cellFilter: 'date:\'dd-MM-yyyy\'',
             enableSorting: false
         },
         {
-            displayName: "Số lượng",
-            name: 'soLuong',
-            enableSorting: false,
+            displayName: "Ngày đi",
+            name: 'ngayDi',
+            cellFilter: 'date:\'dd-MM-yyyy\'',
+            enableSorting: false
         },
         {
             displayName: "",

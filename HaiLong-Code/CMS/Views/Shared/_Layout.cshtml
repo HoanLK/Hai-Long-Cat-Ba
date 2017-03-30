@@ -55,7 +55,7 @@
             z-index: 1;
         }
 
-        .shadow{
+        .shadow {
             box-shadow: 0px 2px 5px rgba(0,0,0,.3);
         }
     </style>
@@ -78,18 +78,19 @@
 
                 <!--Nút chuyển ngôn ngữ-->
                 <div class="lang col-md-12 col-lg-12">
-                    <a href="#" class="pull-right">
-                        <img src="~/Content/Front/images/EN-ico.png" alt="" class="img-responsive" />
-                    </a>
-                    <a href="#" class="pull-right">
-                        <img src="~/Content/Front/images/VN-ico.png" alt="" class="img-responsive" />
-                    </a>
+                    <div id="google_translate_element" style="display: block; float: right; margin-right: 3em;"></div>
+                    @*<a href="#" class="pull-right">
+                            <img src="~/Content/Front/images/EN-ico.png" alt="" class="img-responsive" />
+                        </a>
+                        <a href="#" class="pull-right">
+                            <img src="~/Content/Front/images/VN-ico.png" alt="" class="img-responsive" />
+                        </a>*@
                 </div>
 
                 <!--Menu-->
                 <nav class="menu col-md-12 col-lg-12">
                     <ul>
-                        <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                        <li><a href="@Url.Action(" Index","Home")">Trang chủ</a></li>
                         <li><a href="/danh-muc-bai-viet/phong-nghi">Phòng nghỉ</a></li>
                         <li><a href="/danh-muc-bai-viet/nha-hang-va-su-kien">Nhà hàng & sự kiên</a></li>
                         <li><a href="/danh-muc-bai-viet/dich-vu-khach-san">Dịch vụ khách sạn</a></li>
@@ -106,12 +107,12 @@
             <nav id="dl-menu" class="dl-menuwrapper">
                 <button class="dl-trigger">Open Menu</button>
                 <div>
-                    <a href="@Url.Action("Index","Home")" class="logo"><img src="~/Content/Front/images/logo-co.png" alt="" /></a>
+                    <a href="@Url.Action(" Index","Home")" class="logo"><img src="~/Content/Front/images/logo-co.png" alt="" /></a>
                     <a href="tel:0313888635" class="phone">0313.888.635</a>
                     <a id="button-search" class="search"><i class="fa fa-search search-btn"></i></a>
                 </div>
                 <ul class="dl-menu">
-                    <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                    <li><a href="@Url.Action(" Index","Home")">Trang chủ</a></li>
                     <li><a href="/danh-muc-bai-viet/phong-nghi">Phòng nghỉ</a></li>
                     <li><a href="/danh-muc-bai-viet/nha-hang-va-su-kien">Nhà hàng & sự kiên</a></li>
                     <li><a href="/danh-muc-bai-viet/dich-vu-khach-san">Dịch vụ khách sạn</a></li>
@@ -132,11 +133,11 @@
             <form class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                 <div class="chonngay pull-left">
                     <label>Ngày đến</label><br />
-                    <input type="text" class="date" id="datepicker1" ng-model="order.ngayDen"/>
+                    <input type="text" class="date" id="datepicker1" ng-model="order.ngayDen" />
                 </div>
                 <div class="chonngay pull-left">
                     <label>Ngày đi</label><br />
-                    <input type="text" class="date" id="datepicker2" ng-model="order.ngayDi"/>
+                    <input type="text" class="date" id="datepicker2" ng-model="order.ngayDi" />
                 </div>
                 <div class="select pull-left">
                     <label for="soluongphong">Số lượng phòng</label><br />
@@ -228,7 +229,7 @@
         </div>
     </header>
 
-    <a id="back-to-top" href="#" style="display:block; position:fixed; overflow:hidden; right:5%; bottom:5%; z-index:9999;" class="btn btn-primary btn-lg back-to-top" role="button" @*title="Nhấn để chuyển lên đầu trang"*@ data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <a id="back-to-top" href="#" style="display:block; position:fixed; overflow:hidden; right:5%; bottom:5%; z-index:9999;" class="btn btn-primary btn-lg back-to-top" role="button" @*title="Nhấn để chuyển lên đầu trang" *@ data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
 
     @RenderBody()
@@ -280,7 +281,7 @@
             <div class="diachi col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
                 <!--Logo-->
-                <a href="@Url.Action("Index","Home")">
+                <a href="@Url.Action(" Index","Home")">
                     <img src="~/Content/Front/images/logo-co.png" alt="" class="img-responsive" />
                 </a>
 
@@ -305,8 +306,8 @@
                     Link nhanh
                 </p>
                 <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <li><a href="@Url.Action("","Home")">Đặt phòng</a></li>
-                    <li><a href="/danh-muc-bai-viet/phong-nghi>Nhà hàng & Bar</a></li>
+                    <li><a href="@Url.Action(" "," Home")">Đặt phòng</a></li>
+                    <li><a href="/danh-muc-bai-viet/phong-nghi">Nhà hàng & Bar</a></li>
                     <li><a href="/danh-muc-bai-viet/nha-hang-va-su-kien">Hội nghị - Sự kiện</a></li>
                 </ul>
                 <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -330,14 +331,18 @@
     <!--jquery-->
     @*<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>*@
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 
     <!--AngularJS-->
     @*<script src="~/Scripts/angular.min.js"></script>*@
+    <script src="~/Scripts/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     @*<script src="~/Scripts/angular-sanitize.min.js"></script>*@
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
     <script src="~/Scripts/angular-cookies.min.js"></script>
 
@@ -421,6 +426,12 @@
     <script src="~/Scripts/Front/searchController.min.js"></script>
     <script src="~/Scripts/Front/showSearchController.min.js"></script>
 
-    
+    <!--Translate-->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'vi', includedLanguages: 'en,vi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

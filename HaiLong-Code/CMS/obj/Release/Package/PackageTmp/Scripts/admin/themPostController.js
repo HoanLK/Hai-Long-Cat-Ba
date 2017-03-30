@@ -14,6 +14,17 @@
         finder.popup();
     }
 
+    $scope.chooseImageNgang = function () {
+        // You can use the "CKFinder" class to render CKFinder in a page:
+        var finder = new CKFinder();
+        finder.selectActionFunction = function (fileUrl) {
+            $scope.post.imageNgang = fileUrl;
+            $scope.$apply();
+        };
+        finder.SelectFunction = 'ShowFileInfo';
+        finder.popup();
+    }
+
 
     function selectFileWithCKFinder(elementId) {
         var finder = new CKFinder();
@@ -64,7 +75,8 @@
                     metadescription: data.metadescription,
                     metakewords: data.metakewords,
                     author: data.author,
-                    robots: data.robots
+                    robots: data.robots,
+                    imageNgang: data.imageNgang,
                 };
                 //Giá trị cho Danh mục
                 $scope.category = { id: data.idCategory };

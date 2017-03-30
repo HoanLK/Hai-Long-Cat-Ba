@@ -12,10 +12,10 @@
             $scope.idCategory = data.idCategory;
 
             //Bài viết cùng chuyên mục
-            $http.get('/API/PostsAPI/')
+            $http.get('/API/PostsAPI?att=baiLienQuan&&value=' + $scope.idCategory)
                 .success(function (data) {
                     angular.forEach(data, function (value, key) {
-                        if (value.idCategory == $scope.idCategory && value.idPost != $scope.idPost) {
+                        if (value.idPost != $scope.idPost) {
                             $scope.relatedPosts.push(value);
                         };
                     });

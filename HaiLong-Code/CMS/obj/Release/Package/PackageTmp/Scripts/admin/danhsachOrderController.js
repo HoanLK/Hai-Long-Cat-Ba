@@ -6,6 +6,11 @@
     //Lấy danh sách Post
     $http.get('/Orders/GetAllOrdersNoChecked/').success(function (data) {
         $scope.gridOptions.data = data;
+        angular.forEach($scope.gridOptions.data, function (value, index) {
+            console.log(value.ngayDen);
+            $scope.gridOptions.data[index].ngayDen = new Date(parseInt(value.ngayDen.substr(6)));
+            $scope.gridOptions.data[index].ngayDi = new Date(parseInt(value.ngayDi.substr(6)));
+        });
     });
 
     //Tùy chỉnh Column
@@ -33,23 +38,25 @@
             enableSorting: false
         },
         {
-            displayName: "Địa chỉ",
-            name: 'diaChi',
-            enableSorting: false
-        },
-        {
             displayName: "SĐT",
             name: 'SDT',
             enableSorting: false
         },
         {
-            displayName: "Email",
-            name: 'tour',
+            displayName: "Số phòng",
+            name: 'soPhong',
             enableSorting: false
         },
         {
-            displayName: "Ngày khởi hành",
-            name: 'timeStart',
+            displayName: "Ngày đến",
+            name: 'ngayDen',
+            cellFilter: 'date:\'dd-MM-yyyy\'',
+            enableSorting: false
+        },
+        {
+            displayName: "Ngày đi",
+            name: 'ngayDi',
+            cellFilter: 'date:\'dd-MM-yyyy\'',
             enableSorting: false
         },
         {
@@ -105,11 +112,12 @@
             $scope.Order = {
                 idOrder: data.idOrder,
                 hoTen: data.hoTen,
-                diaChi: data.diaChi,
                 SDT: data.SDT,
-                email: data.email,
-                sanPham: data.sanPham,
-                soLuong: data.soLuong,
+                ngayDen: data.ngayDen,
+                ngayDi: data.ngayDi,
+                soPhong: data.soPhong,
+                nguoiLon: data.nguoiLon,
+                treEm:data.treEm,
                 checked: 1,
             }
             $http.put('/API/OrderAPI/' + id, $scope.Order)
